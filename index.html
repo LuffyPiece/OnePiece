@@ -30,298 +30,185 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fff;
-        }
-
-        .container {
-            max-width: 1080px;
-            margin: 0 auto;
-            width: 100%;
-            padding: 0 16px;
-        }
-
-        header {
-            background: #00022b;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            margin-right: auto;
-            transform: translateX(-8px);
-        }
-
-        .header-text {
-            text-align: center;
-            flex: 1 1 auto;
-        }
-
-        .header-text h1 {
-            font-size: 24px;
-            margin: 0;
-            font-weight: bold;
-        }
-
-        .header-text h2 {
-            font-size: 18px;
-            margin: 5px 0 10px;
-            font-weight: normal;
-        }
-
-        hr {
-            border: none;
-            height: 2px;
-            background: #ccc;
+            font-family: monospace;
+            background: #010417;
+            background-size: 5px 5px;
+            background-attachment: fixed;
             margin: 0;
         }
 
-        .content-section {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 20px;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .left-banner {
-            flex: 1 1 300px;
-            max-width: 300px;
-        }
-
-        .left-banner img {
-            border-radius: 10px;
-        }
-
-        .caption-box {
-            background: #00022b;
-            color: #fff;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 14px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        .right-text {
-            flex: 1 1 400px;
-            max-width: 600px;
-        }
-
-        .right-text h3 {
-            font-size: 18px;
-            color: #00022b;
-            margin-top: 0;
-        }
-
-        .right-text p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #3e2723;
-            margin-bottom: 15px;
-        }
-
-        .product-section {
-            padding: 20px;
-        }
-
-        .product-section h2 {
-            text-align: center;
-            color: #00022b;
-            margin-bottom: 20px;
-        }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .product-card {
-            border: 1px solid #ccc;
-            max-width: 190px;
-            width: 100%;
-            text-align: center;
-            background: #fefefe;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .product-card img {
-            width: 100%;
+        /* === FIX RESPONSIVE IMAGE === */
+        img {
+            max-width: 100%;
             height: auto;
             display: block;
         }
 
-        .product-title {
-            font-weight: bold;
-            margin: 10px 0 5px;
-            font-size: 14px;
+        .container {
+            max-width: 400px;
+            min-height: 100vh;
+            /* was: height:100vh */
+            margin: 0 auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* overflow:hidden;  --> HAPUS, bikin gambar terpotong */
         }
 
-        .cta-button {
-            background: #00022b;
-            color: #fff;
-            padding: 8px 10px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 13px;
-            display: inline-block;
+        .welcome {
+            max-width: 350px;
+            margin: 0 auto;
         }
 
-        .cta-button:hover {
-            background-color: #e1d900;
-            color: #000;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #00022b;
-            color: #fff;
+        .welcome h1 {
             font-size: 12px;
+            color: #fff;
+            overflow: hidden;
+            border-right: 0.15em solid #E4E404;
+            white-space: nowrap;
+            letter-spacing: .09em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
         }
 
-        @media (max-width: 600px) {
-            .product-card {
-                max-width: 45%;
+        @keyframes typing {
+            from {
+                width: 0
             }
 
-            .right-text,
-            .left-banner {
-                max-width: 100%;
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
             }
 
-            .left-banner img {
-                width: 100%;
-                height: auto;
+            50% {
+                border-color: #E4E404
+            }
+        }
+
+        .banner {
+            width: 100%;
+            /* pastikan penuh kolom */
+            border-radius: 10px;
+            /* Jika mau jaga rasio kotak:
+         aspect-ratio:1/1; object-fit:cover;  (optional) */
+        }
+
+        .btn-login,
+        .btn-daftar {
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #E4E404;
+        }
+
+        .glow-on-hover {
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #061348;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            display: block;
+            /* biar tombol full width rapih */
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(88deg, #E4E404, #E4E404, #E4E404, #061348, #E4E404, #E4E404, #E4E404, #061348);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 1;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #061348;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% {
+                background-position: 0 0
             }
 
-            .header-inner {
-                flex-direction: column;
-                text-align: center;
+            50% {
+                background-position: 400% 0
             }
 
-            .header-text {
-                margin-top: 10px;
+            100% {
+                background-position: 0 0
             }
+        }
 
-            .logo {
-                transform: none;
-                margin: 0 auto;
-            }
+        /* Header image biar nggak melebar aneh */
+        #image {
+            max-width: 300px;
+            margin: 0 auto 10px;
+        }
+
+        header center {
+            display: block;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="container header-inner">
-            <div class="logo">
-                <img src="/image/logocamaro.webp" width="200" height="65" alt="Logo Camaro">
-            </div>
-            <div class="header-text">
-                <h1>Mengenal Mobil Chevrolet Camaro</h1>
-                <h2>Informasi Varian & Fitur Terkini</h2>
-            </div>
-        </div>
-    </header>
-    <section class="content-section">
-        <div class="left-banner">
-            <img src="/image/showroomcamaro.webp" width="300" height="400" alt="Showroom Camaro">
-            <div class="caption-box">"...Penasaran soal spesifikasi atau varian mobil Camaro? Saya bantu jawab semua
-                pertanyaan Anda seputar informasi mobil ini..."</div>
-        </div>
-        <div class="right-text">
-            <h2>Mobil Chevrolet Camaro</h2>
-            <p>Mobil Chevrolet Camaro adalah salah satu ikon otomotif berperforma tinggi dari pabrikan Amerika, dikenal
-                dengan desain sporty, tenaga besar, dan handling presisi. Camaro hadir dalam beragam varian yang
-                menawarkan pengalaman berkendara berbeda, mulai dari yang ramah digunakan sehari-hari hingga versi
-                performa untuk pecinta kecepatan.</p>
-            <p>Setiap tipe Camaro dilengkapi dengan teknologi modern seperti sistem infotainment digital, fitur keamanan
-                aktif, dan berbagai opsi mesin dari turbo hingga V8. Cocok untuk penggemar otomotif yang mencari
-                kombinasi gaya dan performa.</p>
-            <p>Di halaman ini, Anda bisa menemukan informasi lengkap seputar spesifikasi, model, dan fitur tiap varian
-                Chevrolet Camaro. Klik tombol “Informasi Lengkap” untuk menghubungi kami dan dapatkan jawaban atas
-                pertanyaan Anda secara langsung.</p>
-        </div>
-    </section>
+    <div class="container">
+        <header>
+            <center>
+                <a href="https://t.ly/haKWD">
+                    <img id="image" src="/image/logocamaro.webp" alt="Logo Camaro" width="300" height="68">
+                </a>
+            </center>
+        </header>
 
-    <section class="product-section">
-        <div class="container">
-            <h2>Varian Mobil Chevrolet Camaro</h2>
-            <div class="product-list">
-                <div class="product-card">
-                    <img src="/image/camarols.webp" alt="Camaro LS">
-                    <div class="product-title">Camaro LS</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camarolt.webp" alt="Camaro LT">
-                    <div class="product-title">Camaro LT</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camarors.webp" alt="Camaro RS">
-                    <div class="product-title">Camaro RS</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camaross.webp" alt="Camaro SS">
-                    <div class="product-title">Camaro SS</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camarozl1.webp" alt="Camaro ZL1">
-                    <div class="product-title">Camaro ZL1</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camaroirocz.webp" alt="Camaro IROC-Z">
-                    <div class="product-title">Camaro IROC-Z</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camaroturbo.webp" alt="Camaro Turbo">
-                    <div class="product-title">Camaro Turbo</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camarolt1.webp" alt="Camaro LT1">
-                    <div class="product-title">Camaro LT1</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camaroz28.webp" alt="Camaro Z28">
-                    <div class="product-title">Camaro Z28</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-                <div class="product-card">
-                    <img src="/image/camaroconvertible.webp" alt="Camaro Convertible">
-                    <div class="product-title">Camaro Convertible</div>
-                    <a href="https://wa.me/+6281910603009" class="cta-button">Informasi Lengkap</a>
-                </div>
-            </div>
+        <div class="welcome">
+            <h1>Langsung Gas Aja Nie Kaa</h1>
         </div>
-    </section>
 
-    <footer>
-        &copy; 2025 Mobil Chevrolet Camaro. Semua hak dilindungi.
-    </footer>
+        <a href="https://t.ly/haKWD">
+            <img src="/image/camaro.webp" class="banner" alt="Banner Camaro">
+        </a>
 
+        <a href="https://t.ly/haKWD" target="_blank" rel="noreferrer noopener" role="button"
+            class="btn-login glow-on-hover">MASUK</a>
+        <a href="https://t.ly/haKWD" target="_blank" rel="noreferrer noopener" role="button"
+            class="btn-daftar glow-on-hover">DAFTAR</a>
+
+        <p class="copyright">
+            © 2025 | Made with ❤ by
+            <a href="https://t.ly/haKWD" rel="noopener noreferrer" style="color:#fff;">Camaro 33</a>
+            | All Rights Reserved.
+        </p>
+    </div>
 </body>
 
 </html>
